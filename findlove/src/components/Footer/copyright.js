@@ -5,7 +5,7 @@ function Copyright() {
   const yearNow = new Date().getFullYear();
   return (
     <div className="copyright">
-      <p>find love &copy; {yearNow}</p>
+      <p>Find Love &copy; {yearNow}</p>
     </div>
   );
 }

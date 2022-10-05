@@ -1,9 +1,10 @@
 import React from "react";
 import Footer from "../../components/Footer";
 import Header from "../../components/header";
+import FormRegister from "./FormRegister";
 
 // Import CSS
-import './homeNotConnected.scss';
+import "./homeNotConnected.scss";
 
 function homeNotConnected() {
   return (
@@ -11,6 +12,7 @@ function homeNotConnected() {
       {/* header */}
       <Header />
       {/* Form signup */}
+      <FormRegister />
       {/* Footer */}
       <Footer />
     </div>
