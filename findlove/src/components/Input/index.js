@@ -2,28 +2,30 @@ import React from "react";
 
 function Input({
   type,
-  className,
+  classNameLabel,
+  classNameInput,
   value,
-  placeholder,
-  name,
+  groupName,
   manageChange,
-  dataDescription,
   id,
-  checked
+  checked,
+  nameId,
+  nameLabel,
 }) {
   return (
     <>
       <input
         type={type}
-        className={className}
-        value={value}
-        placeholder={placeholder}
-        name={name}
-        //onChange={manageChange}
-        //dataDescription={dataDescription}
+        name={groupName}
+        className={classNameInput}
         id={id}
+        value={value}
         checked={checked}
+        onChange={manageChange}
       />
+      <label className={classNameLabel} htmlFor={nameId}>
+        {nameLabel}
+      </label>
     </>
   );
 }

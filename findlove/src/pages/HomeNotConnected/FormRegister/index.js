@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 
+// Import Components
+import Input from "../../../components/Input";
+
 // Import CSS
 import "./formRegister.scss";
 
@@ -22,61 +25,59 @@ function FormRegister() {
         <div className="form_register-input--box">
           <p>Je suis</p>
           <div className="form_register-box-input">
-            <input
+            <Input
               type="radio"
               name="me-group"
-              className="form_register-input man_checked"
+              classNameInput="form_register-input man_checked"
               id="man"
               value="man"
               checked={gender === "man"}
-              onChange={manageChange}
+              manageChange={manageChange}
+              nameLabel="un homme"
+              classNameLabel="man-label"
+              nameId="man"
             />
-            <label className="man-label" htmlFor="man">
-              un homme
-            </label>
-
-            <input
+            <Input
               type="radio"
               name="me-group"
-              className="form_register-input woman_checked"
+              classNameInput="form_register-input woman_checked"
               id="woman"
               value="woman"
-              defaultChecked={gender === "woman"}
-              onChange={manageChange}
+              checked={gender === "woman"}
+              manageChange={manageChange}
+              nameLabel="une femme"
+              classNameLabel="woman-label"
+              nameId="woman"
             />
-            <label className="woman-label" htmlFor="woman">
-              une femme
-            </label>
           </div>
         </div>
         <div className="form_register-input--box">
           <p>Je Recherche</p>
           <div className="form_register-box-input-search">
-            <input
+            <Input
               type="radio"
               name="search-group"
-              className="form_register-input"
+              classNameInput="form_register-input"
               id="man-search"
               value="man-search"
               checked={genderSearch === "man-search"}
-              onChange={manageChangeSearch}
+              manageChange={manageChangeSearch}
+              nameLabel="un homme"
+              classNameLabel="man-label"
+              nameId="man-search"
             />
-            <label className="man-label" htmlFor="man-search">
-              un homme
-            </label>
-
-            <input
+            <Input
               type="radio"
               name="search-group"
-              className="form_register-input"
+              classNameInput="form_register-input"
               id="woman-search"
               value="woman-search"
               checked={genderSearch === "woman-search"}
-              onChange={manageChangeSearch}
+              manageChange={manageChangeSearch}
+              nameLabel="une femme"
+              classNameLabel="woman-label"
+              nameId="woman-search"
             />
-            <label className="woman-label" htmlFor="woman-search">
-              une femme
-            </label>
           </div>
         </div>
         <div className="form_register--button">
