@@ -1,7 +1,7 @@
 import React from "react";
 import Footer from "../../components/Footer";
 import Header from "../../components/header";
-import FormRegister from "./FormRegister";
+import FormRegisterMultistep from "./FormRegisterMultistep/";
 
 // Import CSS
 import "./homeNotConnected.scss";
@@ -12,7 +12,7 @@ function homeNotConnected() {
       {/* header */}
       <Header />
       {/* Form signup */}
-      <FormRegister />
+      <FormRegisterMultistep />
       {/* Footer */}
       <Footer />
     </div>

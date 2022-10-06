@@ -1,9 +1,9 @@
 import React from "react";
 
-function Input({
+function Select({
   type,
   classNameLabel,
-  classNameInput,
+  classNameSelect,
   value,
   groupName,
   manageChange,
@@ -15,10 +15,10 @@ function Input({
 }) {
   return (
     <>
-      <input
+      <select
         type={type}
         name={groupName}
-        className={classNameInput}
+        className={classNameSelect}
         id={id}
         value={value}
         checked={checked}
@@ -32,4 +32,4 @@ function Input({
   );
 }
 
-export default Input;
+export default Select;

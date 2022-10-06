@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 
 // Import Components
-import Input from "../../../components/Input";
+import Input from "../../../../components/Input";
 
 // Import CSS
-import "./formRegister.scss";
+import "./formRegisterChoiceSex.scss";
 
-function FormRegister() {
+function FormRegister({ page, setPage }) {
   const [gender, setGender] = useState("");
   const [genderSearch, setGenderSearch] = useState("");
 
@@ -20,14 +20,14 @@ function FormRegister() {
 
   return (
     <section className="form_register--wrapper">
-      <h2>Trouver le bonheur</h2>
+      <h2>Votre recherche</h2>
       <form className="form_register">
         <div className="form_register-input--box">
           <p>Je suis</p>
           <div className="form_register-box-input">
             <Input
               type="radio"
-              name="me-group"
+              groupName="me-group"
               classNameInput="form_register-input man_checked"
               id="man"
               value="man"
@@ -39,7 +39,7 @@ function FormRegister() {
             />
             <Input
               type="radio"
-              name="me-group"
+              groupName="me-group"
               classNameInput="form_register-input woman_checked"
               id="woman"
               value="woman"
@@ -56,7 +56,7 @@ function FormRegister() {
           <div className="form_register-box-input-search">
             <Input
               type="radio"
-              name="search-group"
+              groupName="search-group"
               classNameInput="form_register-input"
               id="man-search"
               value="man-search"
@@ -68,7 +68,7 @@ function FormRegister() {
             />
             <Input
               type="radio"
-              name="search-group"
+              groupName="search-group"
               classNameInput="form_register-input"
               id="woman-search"
               value="woman-search"
@@ -81,7 +81,14 @@ function FormRegister() {
           </div>
         </div>
         <div className="form_register--button">
-          <button>Suivant</button>
+          <button
+            disabled={page === 2}
+            onClick={() => {
+              setPage((currPage) => currPage + 1);
+            }}
+          >
+            Suivant
+          </button>
         </div>
       </form>
     </section>
