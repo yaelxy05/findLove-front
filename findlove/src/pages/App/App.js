@@ -1,7 +1,7 @@
 import React from 'react'
 
-// import components
-import HomeNotConnected from '../HomeNotConnected';
+// import containers
+import HomeNotConnected from '../../containers/Register';
 import './App.scss';
 
 function App() {
