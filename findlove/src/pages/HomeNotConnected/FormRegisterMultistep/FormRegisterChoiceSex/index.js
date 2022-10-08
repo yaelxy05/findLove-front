@@ -19,7 +19,7 @@ function FormRegister({ page, setPage }) {
   }
 
   return (
-    <section className="form_register--wrapper">
+    <section className="form_register--wrapperOne">
       <h2>Votre recherche</h2>
       <form className="form_register">
         <div className="form_register-input--box">

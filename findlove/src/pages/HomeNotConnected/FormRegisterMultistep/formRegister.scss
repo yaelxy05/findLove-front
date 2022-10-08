@@ -25,24 +25,54 @@
     width: 50%;
     display: flex;
     flex-direction: column;
-  }
+    position: relative;
+    animation: move-in-steps 0.7s ease-in-out;
 
-  .button_next {
-    font-size: 0.8rem !important;
-  }
-
-  .button_prev {
-    font-size: 0.8rem !important;
-    background: rgb(9, 33, 143)!important;
-    margin-right: 2rem;
-
-    &:hover {
-      background: none!important;
-      border: solid 3px rgb(9, 33, 143)!important;
+    @keyframes move-in-steps {
+      0% {
+        margin-left: -52rem;
+        z-index: -1;
+      }
+      100% {
+        margin-left: 0;
+        z-index: 0;
+      }
     }
   }
 
-  .button_submit {
-    font-size: 0.8rem !important;
+  .form_register--button {
+    button {
+      width: 40%;
+      height: 3rem;
+      border: none;
+      border-radius: 1rem;
+    }
+
+    .button_next {
+      background-color: #40df3c;
+      color: white;
+      font-weight: bold;
+      font-size: 0.8rem;
+    }
+
+    .button_prev {
+      color: white;
+      font-weight: bold;
+      font-size: 0.8rem !important;
+      background: rgb(9, 33, 143) !important;
+      margin-right: 2rem;
+
+      &:hover {
+        background: none !important;
+        border: solid 3px rgb(9, 33, 143) !important;
+      }
+    }
+
+    .button_submit {
+      background-color: #40df3c;
+      color: white;
+      font-weight: bold;
+      font-size: 0.8rem;
+    }
   }
 }

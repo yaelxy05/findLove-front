@@ -1,7 +1,7 @@
 @use "src/styles/vars";
 @use "src/styles/mixins";
 
-.form_register--wrapper {
+.form_register--wrapperOne {
   height: 38rem;
   width: 50%;
   background-color: vars.$backgroundTransparent;
@@ -13,6 +13,7 @@
   flex-direction: column;
   box-shadow: 0 8px 28px rgb(33, 30, 33);
   margin: 5rem;
+  
 
   h2 {
     color: white;
