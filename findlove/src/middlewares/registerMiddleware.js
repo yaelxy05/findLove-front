@@ -2,7 +2,7 @@ import axios from "axios";
 
 import { NEW_USER_CREATION } from "../actions/register";
 
-const API_URL = "";
+const API_URL = process.env.REACT_APP_API_URL;
 
 const registerMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
