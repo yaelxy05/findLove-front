@@ -6,13 +6,9 @@ import Input from "../../../../components/Input";
 // Import CSS
 import "./formRegisterChoiceSex.scss";
 
-function FormRegister({ page, setPage }) {
-  const [gender, setGender] = useState("");
+function FormRegister({ page, setPage, gender, changeFieldRegister }) {
   const [genderSearch, setGenderSearch] = useState("");
 
-  function manageChange(event) {
-    setGender(event.target.value);
-  }
   function manageChangeSearch(event) {
     setGenderSearch(event.target.value);
     console.log(event.target.value);
@@ -21,30 +17,35 @@ function FormRegister({ page, setPage }) {
   return (
     <section className="form_register--wrapperOne">
       <h2>Votre recherche</h2>
-      <form className="form_register">
+      <div className="form_register">
         <div className="form_register-input--box">
           <p>Je suis</p>
           <div className="form_register-box-input">
             <Input
               type="radio"
-              groupName="me-group"
+              groupName="gender"
               classNameInput="form_register-input man_checked"
               id="man"
-              value="man"
-              checked={gender === "man"}
-              manageChange={manageChange}
+              value="H"
+              checked={gender === "H"}
+              manageChange={(value, identifier) => {
+                changeFieldRegister(value, identifier);
+              }}
               nameLabel="un homme"
               classNameLabel="man-label"
               nameId="man"
             />
             <Input
               type="radio"
-              groupName="me-group"
+              groupName="gender"
               classNameInput="form_register-input woman_checked"
               id="woman"
-              value="woman"
-              checked={gender === "woman"}
-              manageChange={manageChange}
+              value="W"
+              checked={gender === "W"}
+              manageChange={(value, identifier) => {
+                changeFieldRegister(value, identifier);
+                
+              }}
               nameLabel="une femme"
               classNameLabel="woman-label"
               nameId="woman"
@@ -90,7 +91,7 @@ function FormRegister({ page, setPage }) {
             Suivant
           </button>
         </div>
-      </form>
+      </div>
     </section>
   );
 }

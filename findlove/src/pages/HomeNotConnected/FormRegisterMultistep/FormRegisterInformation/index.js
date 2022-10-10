@@ -2,12 +2,20 @@ import React from "react";
 
 // Import Components
 import Input from "../../../../components/Input";
-import Select from "../../../../components/Select";
 
 // Import css
 import "../formRegister.scss";
 
-function FormRegisterInformation({ page, setPage }) {
+function FormRegisterInformation({
+  page,
+  setPage,
+  city,
+  birthdate,
+  lastname,
+  firstname,
+  changeFieldRegister
+}) {
+  
   return (
     <section className="form_register--wrapper">
       <h2>Informations</h2>
@@ -15,45 +23,58 @@ function FormRegisterInformation({ page, setPage }) {
         <Input
           type="text"
           groupName="firstname"
-          classNameInput="input_firstname"
+          classNameInput="input_firstname inputMultiStep"
           id="firstname"
-          value="firstname"
+          value={firstname}
           nameLabel="Prénom"
-          classNameLabel="firstname-label"
+          classNameLabel="firstname-label labelMultiStep"
           nameId="firstname-id"
-          placeholder=" "
+          placeholder="Prénom"
+          manageChange={(value, identifier) =>
+            changeFieldRegister(value, identifier)
+          }
         />
         <Input
           type="text"
           groupName="lastname"
-          classNameInput="input_lastname"
+          classNameInput="input_lastname inputMultiStep"
           id="lastname"
-          value="lastname"
+          value={lastname}
           nameLabel="Nom"
-          classNameLabel="lastname-label"
+          classNameLabel="lastname-label labelMultiStep"
           nameId="lastname-id"
-          placeholder=" "
+          placeholder="Nom"
+          manageChange={(value, identifier) =>
+            changeFieldRegister(value, identifier)
+          }
         />
         <Input
           type="text"
           groupName="city"
-          classNameInput="input_city"
+          classNameInput="input_city inputMultiStep"
           id="city"
-          value="city"
+          value={city}
           nameLabel="Ville"
-          classNameLabel="city-label"
+          classNameLabel="city-label labelMultiStep"
           nameId="city-id"
-          placeholder=" "
+          placeholder="Ville"
+          manageChange={(value, identifier) =>
+            changeFieldRegister(value, identifier)
+          }
         />
-        <Select
-          groupName="birthday"
-          classNameInput="input_birthday"
+        <Input
+          type="date"
+          groupName="birthdate"
+          classNameInput="input_birthday inputMultiStep"
           id="birthday"
-          value="birthday"
+          value={birthdate}
           nameLabel="Date de naissance"
-          classNameLabel="birthday-label"
+          classNameLabel="birthday-label labelMultiStep"
           nameId="birthday-id"
-          placeholder=" "
+          placeholder="Date de naissance"
+          manageChange={(value, identifier) =>
+            changeFieldRegister(value, identifier)
+          }
         />
         <div className="form_register--button">
           <button

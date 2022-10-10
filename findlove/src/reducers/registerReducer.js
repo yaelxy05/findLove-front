@@ -1,32 +1,34 @@
-import { UPDATE_REGISTER_FIELD } from "../actions/register";
+import { CHANGE_REGISTER_FIELD } from "../actions/register";
 
 const initialState = {
-  email: "",
+  mail: "",
   password: "",
   confirmPassword: "",
   city: "",
-  birthday: new Date(),
-  sexe: "",
+  birthdate: new Date(),
+  gender: "",
   lastname: "",
   firstname: "",
 };
 
 function registerReducer(state = initialState, action) {
   switch (action.type) {
-    case UPDATE_REGISTER_FIELD:
+    case CHANGE_REGISTER_FIELD:
       return {
         ...state,
-        email: action.name === "email" ? action.newValue : state.email,
+        mail: action.name === "mail" ? action.newValue : state.mail,
         password: action.name === "password" ? action.newValue : state.password,
         confirmPassword:
           action.name === "confirmPassword"
             ? action.newValue
             : state.confirmPassword,
-        birthday: action.name === "birthday" ? action.newValue : state.birthday,
-        sexe: action.name === "sexe" ? action.newValue : state.sexe,
+        birthdate:
+          action.name === "birthdate" ? action.newValue : state.birthdate,
+        gender: action.name === "gender" ? action.newValue : state.gender,
         lastname: action.name === "lastname" ? action.newValue : state.lastname,
         firstname:
           action.name === "firstname" ? action.newValue : state.firstname,
+        city: action.name === "city" ? action.newValue : state.city,
       };
     default:
       return state;

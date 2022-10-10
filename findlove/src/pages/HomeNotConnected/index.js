@@ -6,13 +6,37 @@ import FormRegisterMultistep from "./FormRegisterMultistep/";
 // Import CSS
 import "./homeNotConnected.scss";
 
-function homeNotConnected() {
+function homeNotConnected({
+  city,
+  birthdate,
+  lastname,
+  firstname,
+  mail,
+  changeFieldRegister,
+  password,
+  confirmPassword,
+  gender,
+  handleRegister,
+}) {
   return (
     <div className="homeNotConnected_wrapper">
       {/* header */}
       <Header />
       {/* Form signup */}
-      <FormRegisterMultistep />
+
+      <FormRegisterMultistep
+        city={city}
+        birthdate={birthdate}
+        lastname={lastname}
+        firstname={firstname}
+        changeFieldRegister={changeFieldRegister}
+        mail={mail}
+        password={password}
+        confirmPassword={confirmPassword}
+        gender={gender}
+        handleRegister={handleRegister}
+      />
+
       {/* Footer */}
       <Footer />
     </div>

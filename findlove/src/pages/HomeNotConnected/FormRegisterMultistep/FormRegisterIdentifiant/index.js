@@ -6,32 +6,60 @@ import Input from "../../../../components/Input";
 // Import css
 import "../formRegister.scss";
 
-function FormRegisterInformation({ page, setPage }) {
+function FormRegisterIdentifiant({
+  page,
+  setPage,
+  mail,
+  password,
+  confirmPassword,
+  changeFieldRegister,
+  handleRegister
+}) {
   return (
     <section className="form_register--wrapper">
       <h2>Identifiants</h2>
       <div className="form_register--inputbox">
         <Input
-          type="email"
-          groupName="email"
-          classNameInput="input_email"
+          type="mail"
+          groupName="mail"
+          classNameInput="input_email inputMultiStep"
           id="email"
-          value="email"
+          value={mail}
           nameLabel="Email"
-          classNameLabel="email-label"
+          classNameLabel="email-label labelMultiStep"
           nameId="email-id"
-          placeholder=" "
+          placeholder="Email"
+          manageChange={(value, identifier) =>
+            changeFieldRegister(value, identifier)
+          }
         />
         <Input
           type="password"
           groupName="password"
-          classNameInput="input_password"
+          classNameInput="input_password inputMultiStep"
           id="password"
-          value="password"
+          value={password}
           nameLabel="password"
-          classNameLabel="password-label"
+          classNameLabel="password-label labelMultiStep"
           nameId="password-id"
-          placeholder=" "
+          placeholder="Mot de passe"
+          manageChange={(value, identifier) =>
+            changeFieldRegister(value, identifier)
+          }
+        />
+        <Input
+          type="password"
+          groupName="confirmPassword"
+          classNameInput="input_confirm-password inputMultiStep"
+          id="confirm-password"
+          value={confirmPassword}
+          nameLabel="confirm-password"
+          classNameLabel="confirm-password-label labelMultiStep"
+          nameId="confirm-password-id"
+          placeholder="confirmation du mot de passe"
+          manageChange={(value, identifier) =>
+            changeFieldRegister(value, identifier)
+          }
         />
         <div className="form_register--button">
           <button
@@ -43,11 +71,11 @@ function FormRegisterInformation({ page, setPage }) {
           >
             Précédent
           </button>
-          <button className="button_submit">Envoyer</button>
+          <button className="button_submit" type="submit" onClick={handleRegister}>Envoyer</button>
         </div>
       </div>
     </section>
   );
 }
 
-export default FormRegisterInformation;
+export default FormRegisterIdentifiant;

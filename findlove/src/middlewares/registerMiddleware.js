@@ -7,39 +7,28 @@ const API_URL = process.env.REACT_APP_API_URL;
 const registerMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case NEW_USER_CREATION: {
-      const {
-        email,
-        password,
-        confirmPassword,
-        city,
-        birthday,
-        sexe,
-        lastname,
-        firstname,
-      } = store.getState().register;
+      const { mail, password, city, birthdate, gender, lastname, firstname } =
+        store.getState().register;
 
-      const newUser = {
-        email,
-        password,
-        confirmPassword,
-        city,
-        birthday,
-        sexe,
-        lastname,
-        firstname,
-      };
+      const newUser = new FormData();
+      newUser.set("mail", mail);
+      newUser.set("password", password);
+      newUser.set("city", city);
+      newUser.set("birthdate", birthdate);
+      newUser.set("gender", gender);
+      newUser.set("lastname", lastname);
+      newUser.set("firstname", firstname);
 
-      if (password === confirmPassword) {
-        axios
-          .post(`${API_URL}/register`, newUser)
-          .then((response) => {
-            console.log(response.data);
-            window.location = "/connexion";
-          })
-          .catch((error) => {
-            console.log(error.response.data);
-          });
-      }
+      axios
+        .post(`${API_URL}/register`, newUser)
+        .then((response) => {
+          console.log(response);
+          //window.location = "/connexion";
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+
       next(action);
       break;
     }

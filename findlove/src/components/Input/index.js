@@ -13,6 +13,11 @@ function Input({
   nameLabel,
   placeholder
 }) {
+
+  const handleChange = (evt) => {
+    manageChange(evt.target.value, groupName);
+  };
+  
   return (
     <>
       <input
@@ -22,7 +27,7 @@ function Input({
         id={id}
         value={value}
         checked={checked}
-        onChange={manageChange}
+        onChange={handleChange}
         placeholder={placeholder}
       />
       <label className={classNameLabel} htmlFor={nameId}>

@@ -1,7 +1,7 @@
 export const NEW_USER_CREATION = 'NEW_USER_CREATION';
 export const CHANGE_REGISTER_FIELD = 'CHANGE_REGISTER_FIELD';
 
-export const updateRegisterField = (newValue, name) => ({
+export const changeRegisterField = (newValue, name) => ({
     type: CHANGE_REGISTER_FIELD,
     newValue,
     name,

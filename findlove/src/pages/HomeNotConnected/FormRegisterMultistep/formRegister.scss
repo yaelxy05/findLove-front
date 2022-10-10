@@ -3,7 +3,7 @@
 
 .form_register--wrapper {
   height: 38rem;
-  width: 50%;
+  width: 45%;
   background-color: vars.$backgroundTransparent;
   border-radius: 2rem;
   align-self: center;
@@ -38,9 +38,43 @@
         z-index: 0;
       }
     }
+
+    .inputMultiStep {
+      height: 3rem;
+      width: 100%;
+      border-radius: 2rem;
+      border: solid 2px #f73489;
+      background: vars.$backgroundTransparent;
+      padding-left: 1.3rem;
+      margin-bottom: 1rem;
+      color: vars.$colorH2Home;
+
+      &::placeholder {
+        color: vars.$colorH2Home;
+        font-weight: bold;
+      }
+    }
+    .labelMultiStep {
+      display: none;
+    }
+
+    .input_birthday {
+      color: vars.$colorH2Home;
+      font-weight: bold;
+    }
+    input[type="date"]::-webkit-calendar-picker-indicator {
+      filter: invert(100%);
+      margin-right: 2.5rem;
+      font-weight: bold;
+      font-size: 1.3rem;
+      cursor: pointer;
+    }
   }
 
   .form_register--button {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
     button {
       width: 40%;
       height: 3rem;
