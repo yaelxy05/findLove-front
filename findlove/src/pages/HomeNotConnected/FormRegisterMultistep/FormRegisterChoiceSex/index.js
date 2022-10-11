@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 // Import Components
 import Input from "../../../../components/Input";
-
+import ProgressBar from "../../../../components/ProgressBar";
 // Import CSS
 import "./formRegisterChoiceSex.scss";
 
@@ -16,6 +16,15 @@ function FormRegister({ page, setPage, gender, changeFieldRegister }) {
 
   return (
     <section className="form_register--wrapperOne">
+      <ProgressBar
+        step1Title="Recherche"
+        step2Title="Informations"
+        step3Title="Identifiant"
+        number1="1"
+        number2="2"
+        number3="3"
+        page={page}
+      />
       <h2>Votre recherche</h2>
       <div className="form_register">
         <div className="form_register-input--box">
@@ -44,7 +53,6 @@ function FormRegister({ page, setPage, gender, changeFieldRegister }) {
               checked={gender === "W"}
               manageChange={(value, identifier) => {
                 changeFieldRegister(value, identifier);
-                
               }}
               nameLabel="une femme"
               classNameLabel="woman-label"

@@ -5,6 +5,7 @@ import FormRegisterChoiceSex from "./FormRegisterChoiceSex";
 import FormRegisterInformation from "./FormRegisterInformation";
 import FormRegisterIdentifiant from "./FormRegisterIdentifiant";
 
+
 function FormRegisterMultistep({
   city,
   birthdate,
@@ -15,7 +16,7 @@ function FormRegisterMultistep({
   password,
   confirmPassword,
   gender,
-  handleRegister
+  handleRegister,
 }) {
   const [page, setPage] = useState(0);
 

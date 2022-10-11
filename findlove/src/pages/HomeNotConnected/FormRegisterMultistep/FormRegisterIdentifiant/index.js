@@ -2,7 +2,7 @@ import React from "react";
 
 // Import Components
 import Input from "../../../../components/Input";
-
+import ProgressBar from "../../../../components/ProgressBar";
 // Import css
 import "../formRegister.scss";
 
@@ -17,6 +17,15 @@ function FormRegisterIdentifiant({
 }) {
   return (
     <section className="form_register--wrapper">
+      <ProgressBar
+        step1Title="Recherche"
+        step2Title="Informations"
+        step3Title="Identifiant"
+        number1="1"
+        number2="2"
+        number3="3"
+        page={page}
+      />
       <h2>Identifiants</h2>
       <div className="form_register--inputbox">
         <Input
