@@ -1,4 +1,6 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTriangleExclamation, faCheck } from "@fortawesome/free-solid-svg-icons";
 
 function Input({
   type,
@@ -11,15 +13,29 @@ function Input({
   checked,
   nameId,
   nameLabel,
-  placeholder
+  placeholder,
+  required,
+  onBlur,
+  errors,
+  success
 }) {
-
   const handleChange = (evt) => {
     manageChange(evt.target.value, groupName);
   };
-  
+
   return (
     <>
+      {errors && (
+        <span className="icon_warning--input">
+          <FontAwesomeIcon icon={faTriangleExclamation} />
+        </span>
+      )}
+      {success && (
+        <span className="icon_success--input">
+        <FontAwesomeIcon icon={faCheck} />
+      </span>
+      )}
+
       <input
         type={type}
         name={groupName}
@@ -29,6 +45,8 @@ function Input({
         checked={checked}
         onChange={handleChange}
         placeholder={placeholder}
+        required={required}
+        onBlur={onBlur}
       />
       <label className={classNameLabel} htmlFor={nameId}>
         {nameLabel}

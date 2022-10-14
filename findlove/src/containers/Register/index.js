@@ -11,15 +11,15 @@ const mapStateToProps = (state) => ({
   gender: state.register.gender,
   lastname: state.register.lastname,
   firstname: state.register.firstname,
+  birthdate: state.register.birthdate
 });
 
 const mapDispatchToProps = (dispatch) => ({
   changeFieldRegister: (value, fieldName) => {
     dispatch(changeRegisterField(value, fieldName));
   },
-
+  
   handleRegister: () => {
-    console.log("click");
     dispatch(newUserCreation());
   },
 });

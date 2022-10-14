@@ -11,6 +11,7 @@ const initialState = {
   firstname: "",
 };
 
+
 function registerReducer(state = initialState, action) {
   switch (action.type) {
     case CHANGE_REGISTER_FIELD:

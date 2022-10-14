@@ -2,7 +2,7 @@
 @use "src/styles/mixins";
 
 .form_register--wrapper {
-  height: 38rem;
+  height: 40rem;
   width: 45%;
   background-color: vars.$backgroundTransparent;
   border-radius: 2rem;
@@ -39,21 +39,53 @@
       }
     }
 
-    .inputMultiStep {
-      height: 3rem;
-      width: 100%;
-      border-radius: 2rem;
-      border: solid 2px #f73489;
-      background: vars.$backgroundTransparent;
-      padding-left: 1.3rem;
-      margin-bottom: 1rem;
-      color: vars.$colorH2Home;
+    
 
-      &::placeholder {
+    .box_input {
+      position: relative;
+      margin-bottom: 2rem;
+
+      .icon_warning--input {
+        color: red;
+        position: absolute;
+        top:15px;
+        right: 20px;
+      }
+
+      .icon_success--input {
+        color: green;
+        position: absolute;
+        top:15px;
+        right: 20px;
+      }
+
+      .inputMultiStep {
+        height: 3rem;
+        width: 100%;
+        border-radius: 2rem;
+        border: solid 2px #f73489;
+        background: vars.$backgroundTransparent;
+        padding-left: 1.3rem;
         color: vars.$colorH2Home;
-        font-weight: bold;
+
+        &::placeholder {
+          color: vars.$colorH2Home;
+          font-weight: bold;
+        }
+      }
+
+      .error_input {
+        position: absolute;
+        padding: 0.2rem 0 0 0.2rem;
+
+        .error {
+          color: rgb(255, 0, 0);
+          font-size: 0.85rem;
+          font-weight: bold;
+        }
       }
     }
+
     .labelMultiStep {
       display: none;
     }
@@ -74,7 +106,7 @@
   .form_register--button {
     display: flex;
     justify-content: center;
-    margin-top: 2rem;
+
     button {
       width: 40%;
       height: 3rem;
