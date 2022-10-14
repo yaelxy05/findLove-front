@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 // Import Components
 import Input from "../../../../components/Input";
@@ -46,7 +46,7 @@ function FormRegisterInformation({
     const checkObj = { ...checksObj };
     //first Name validation
     if (firstname === "") {
-      errorObj.firstname = "Le prénom est requis";
+      errorObj.firstname = "Le prénom est requis.";
     } else if (firstname.length < 3) {
       errorObj.firstname = "Le prénom doit contenir minimum 3 caractères.";
     } else if (
@@ -61,7 +61,7 @@ function FormRegisterInformation({
     }
     //last Name validation
     if (lastname === "") {
-      errorObj.lastname = "le nom est requis";
+      errorObj.lastname = "le nom est requis.";
     } else if (lastname.length < 3) {
       errorObj.lastname = "Le nom doit contenir minimum 3 caractères.";
     } else if (
@@ -74,9 +74,9 @@ function FormRegisterInformation({
       checkObj.lastname = true;
       setSuccess(true);
     }
-    //city Name validation
+    //city  validation
     if (city === "") {
-      errorObj.city = "Un nom de ville est requis";
+      errorObj.city = "Un nom de ville est requis.";
     } else if (
       !/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u.test(
         city
@@ -91,14 +91,14 @@ function FormRegisterInformation({
     if (!/^\d{4}-\d{2}-\d{2}$/u.test(birthdate)) {
       errorObj.birthdate = "Veuillez saisir une date valide.";
     } else if (calculate_age(birthdate) < 18) {
-      errorObj.birthdate = "Il faut avoir plus de 18 ans";
+      errorObj.birthdate = "Il faut avoir plus de 18 ans.";
     } else {
       checkObj.birthdate = true;
       setSuccess(true);
     }
+    
 
     if (
-      success &&
       errorObj.birthdate === "" &&
       errorObj.city === "" &&
       errorObj.firstname === "" &&
@@ -109,7 +109,6 @@ function FormRegisterInformation({
 
     setErrors(errorObj);
     setSuccessIcon(checkObj);
-   
   };
 
   return (
@@ -222,7 +221,14 @@ function FormRegisterInformation({
         </div>
 
         <div className="form_register--button">
-          <button className="button_prev">Précédent</button>
+          <button
+            className="button_prev"
+            onClick={() => {
+              setPage((currPage) => currPage - 1);
+            }}
+          >
+            Précédent
+          </button>
           <button
             disabled={page === 2}
             className="button_next"

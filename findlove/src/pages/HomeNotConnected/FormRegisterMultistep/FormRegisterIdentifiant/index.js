@@ -1,5 +1,4 @@
-import React from "react";
-
+import React, { useState } from "react";
 // Import Components
 import Input from "../../../../components/Input";
 import ProgressBar from "../../../../components/ProgressBar";
@@ -15,6 +14,75 @@ function FormRegisterIdentifiant({
   changeFieldRegister,
   handleRegister,
 }) {
+  let errorsObj = {
+    mail: "",
+    password: "",
+    confirmPassword: "",
+  };
+  let checksObj = {
+    mail: false,
+    password: false,
+    confirmPassword: false,
+  };
+  const [errors, setErrors] = useState(errorsObj);
+  const [success, setSuccess] = useState(false);
+  const [successIcon, setSuccessIcon] = useState(checksObj);
+
+  const validateFormIdentifiant = (evt) => {
+    evt.preventDefault();
+
+    const errorObj = { ...errorsObj };
+    const checkObj = { ...checksObj };
+    //mail validation
+    if (mail === "") {
+      errorObj.mail = "Un email est requis.";
+    } else if (!/\S+@\S+\.\S+/.test(mail)) {
+      errorObj.mail = "l'email n'est pas valide.";
+    } else {
+      checkObj.mail = true;
+      setSuccess(true);
+    }
+    //password validation
+    if (password === "") {
+      errorObj.password = "Un mot de passe est requis.";
+    } else if (password.length < 6) {
+      errorObj.password = "Le mot de passe doit contenir minimum 6 caractères.";
+    } else {
+      checkObj.password = true;
+      setSuccess(true);
+    }
+    //password confirmation validation
+    if (password !== confirmPassword) {
+      errorObj.confirmPassword =
+        "Les champs mot de passe doivent être identique.";
+    } else if (confirmPassword === "") {
+      errorObj.confirmPassword =
+        "Le champ confirmation du mot de passe est requise.";
+    } else {
+      checkObj.confirmPassword = true;
+      setSuccess(true);
+    }
+
+    if (
+      errorObj.mail === "" &&
+      errorObj.password === "" &&
+      errorObj.confirmPassword === ""
+    ) {
+      setSuccess(true);
+      console.log("test sucess")
+    }
+
+    if (
+      errorObj.mail === "" &&
+      errorObj.password === "" &&
+      errorObj.confirmPassword === ""
+    ) {
+      handleRegister();
+    }
+
+    setErrors(errorObj);
+    setSuccessIcon(checkObj);
+  };
   return (
     <section className="form_register--wrapper">
       <ProgressBar
@@ -42,7 +110,14 @@ function FormRegisterIdentifiant({
             manageChange={(value, identifier) =>
               changeFieldRegister(value, identifier)
             }
+            errors={errors.mail}
+            success={successIcon.mail}
           />
+          {errors.mail && (
+            <div className="error_input">
+              <p className="error">{errors.mail}</p>
+            </div>
+          )}
         </div>
         <div className="box_input">
           <Input
@@ -58,7 +133,14 @@ function FormRegisterIdentifiant({
             manageChange={(value, identifier) =>
               changeFieldRegister(value, identifier)
             }
+            errors={errors.password}
+            success={successIcon.password}
           />
+          {errors.password && (
+            <div className="error_input">
+              <p className="error">{errors.password}</p>
+            </div>
+          )}
         </div>
         <div className="box_input">
           <Input
@@ -74,7 +156,14 @@ function FormRegisterIdentifiant({
             manageChange={(value, identifier) =>
               changeFieldRegister(value, identifier)
             }
+            errors={errors.confirmPassword}
+            success={successIcon.confirmPassword}
           />
+          {errors.confirmPassword && (
+            <div className="error_input">
+              <p className="error">{errors.confirmPassword}</p>
+            </div>
+          )}
         </div>
 
         <div className="form_register--button">
@@ -90,7 +179,7 @@ function FormRegisterIdentifiant({
           <button
             className="button_submit"
             type="submit"
-            onClick={handleRegister}
+            onClick={validateFormIdentifiant}
           >
             Envoyer
           </button>
