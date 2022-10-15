@@ -36,7 +36,6 @@ function FormRegisterInformation({
   };
 
   const [errors, setErrors] = useState(errorsObj);
-  const [success, setSuccess] = useState(false);
   const [successIcon, setSuccessIcon] = useState(checksObj);
 
   const validateForm = (evt) => {
@@ -57,7 +56,6 @@ function FormRegisterInformation({
       errorObj.firstname = "Le prénom ne doit pas contenir de chiffres.";
     } else {
       checkObj.firstname = true;
-      setSuccess(true);
     }
     //last Name validation
     if (lastname === "") {
@@ -72,7 +70,6 @@ function FormRegisterInformation({
       errorObj.lastname = "Le nom ne doit pas contenir de chiffres.";
     } else {
       checkObj.lastname = true;
-      setSuccess(true);
     }
     //city  validation
     if (city === "") {
@@ -85,7 +82,6 @@ function FormRegisterInformation({
       errorObj.city = "Ce champs ne doit pas contenir de chiffres.";
     } else {
       checkObj.city = true;
-      setSuccess(true);
     }
     //bithdate validation
     if (!/^\d{4}-\d{2}-\d{2}$/u.test(birthdate)) {
@@ -94,9 +90,7 @@ function FormRegisterInformation({
       errorObj.birthdate = "Il faut avoir plus de 18 ans.";
     } else {
       checkObj.birthdate = true;
-      setSuccess(true);
     }
-    
 
     if (
       errorObj.birthdate === "" &&

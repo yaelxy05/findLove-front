@@ -1,13 +1,21 @@
-import React from 'react'
+import React from "react";
+import { Route, Routes } from "react-router-dom";
 
-// import containers
-import HomeNotConnected from '../../containers/Register';
-import './App.scss';
+// Import Components
+import Footer from "../../components/Footer";
+// Import containers
+import HomeNotConnected from "../../containers/Register";
+import Login from "../../containers/Login";
+// Import CSS
+import "./App.scss";
 
 function App() {
   return (
     <div className="app">
-      <HomeNotConnected />
+      <Routes>
+        <Route path="/" element={<HomeNotConnected />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
     </div>
   );
 }

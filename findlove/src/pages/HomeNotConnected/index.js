@@ -21,7 +21,7 @@ function homeNotConnected({
   return (
     <div className="homeNotConnected_wrapper">
       {/* header */}
-      <Header />
+      <Header nameLink="login" nameButton="Se connecter" nameClassButton="login_button"/>
       {/* Form signup */}
 
       <FormRegisterMultistep

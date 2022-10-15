@@ -1,20 +1,26 @@
 import { connect } from "react-redux";
 
 // IMPORT ACTION
-import { changeLoginField } from "../actions/login";
-
-{/* Import Component */}
+import { changeLoginField, logIn, logOut } from "../../actions/login";
 import Login from "../../pages/Login";
 
 const mapStateToProps = (state) => ({
-  email: state.login.email,
+  username: state.login.username,
   password: state.login.password,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    changeLoginField: (value, fieldName) => {
-        dispatch(changeLoginField(value, fieldName));
-    }
+  // for update state login (password and username)
+  changeLoginField: (value, fieldName) => {
+    dispatch(changeLoginField(value, fieldName));
+  },
+  // function for authentification to server
+  handleLogin: () => {
+    dispatch(logIn());
+  },
+  handleLogout: () => {
+    dispatch(logOut());
+  },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);

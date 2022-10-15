@@ -3,11 +3,13 @@ import { composeWithDevTools } from "redux-devtools-extension";
 
 // Import Middlewares
 import registerMiddleware from "../middlewares/registerMiddleware";
+import loginMiddleware from "../middlewares/loginMiddleware";
+
 // Import reducers
 import reducer from "../reducers";
 
 const enhancers = composeWithDevTools(
-    applyMiddleware(registerMiddleware)
+  applyMiddleware(registerMiddleware, loginMiddleware)
 );
 const store = createStore(reducer, enhancers);
 export default store;

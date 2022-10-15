@@ -12,6 +12,12 @@
   }
 
   .header_button-box {
+    .login_button {
+      width: 10rem;
+    }
+    .signup_button {
+      width: 12rem;
+    }
     .header_button {
       text-align: center;
       font-size: 1.3rem;
@@ -22,7 +28,6 @@
       background: none;
       outline: none;
       height: 3rem;
-      width: 10rem;
 
       &:hover {
         background-color: white;
