@@ -20,7 +20,6 @@ function Login({
 
   return (
     <div className="login_wrapper">
-      {/* header */}
       <Header
         nameLink=""
         nameButton="Créer un compte"
@@ -29,7 +28,6 @@ function Login({
       <section className="form_login">
         <h2>Se connecter</h2>
         <form className="form_login--inputbox" onSubmit={handleAuth}>
-          {/* login */}
           <div className="box_input">
             <Input
               type="username"
@@ -46,8 +44,6 @@ function Login({
               }
             />
           </div>
-
-          {/* password */}
           <div className="box_input">
             <Input
               type="password"
@@ -71,7 +67,6 @@ function Login({
           </div>
         </form>
       </section>
-      {/* Footer */}
       <Footer />
     </div>
   );
