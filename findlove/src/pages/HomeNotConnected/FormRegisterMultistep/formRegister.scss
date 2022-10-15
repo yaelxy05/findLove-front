@@ -1,0 +1,144 @@
+@use "src/styles/vars";
+@use "src/styles/mixins";
+
+.form_register--wrapper {
+  height: 40rem;
+  width: 45%;
+  background-color: vars.$backgroundTransparent;
+  border-radius: 2rem;
+  align-self: center;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 8px 28px rgb(33, 30, 33);
+  margin: 5rem;
+
+  h2 {
+    color: vars.$colorH2Home;
+    font-weight: vars.$fontWieghtH2Home;
+    font-size: 2rem;
+    padding: 2rem 0 1rem 0;
+  }
+
+  .form_register--inputbox {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    animation: move-in-steps 0.7s ease-in-out;
+
+    @keyframes move-in-steps {
+      0% {
+        margin-left: -52rem;
+        z-index: -1;
+      }
+      100% {
+        margin-left: 0;
+        z-index: 0;
+      }
+    }
+
+    
+
+    .box_input {
+      position: relative;
+      margin-bottom: 2rem;
+
+      .icon_warning--input {
+        color: red;
+        position: absolute;
+        top:15px;
+        right: 20px;
+      }
+
+      .icon_success--input {
+        color: green;
+        position: absolute;
+        top:15px;
+        right: 20px;
+      }
+
+      .inputMultiStep {
+        height: 3rem;
+        width: 100%;
+        border-radius: 2rem;
+        border: solid 2px #f73489;
+        background: vars.$backgroundTransparent;
+        padding-left: 1.3rem;
+        color: vars.$colorH2Home;
+
+        &::placeholder {
+          color: vars.$colorH2Home;
+          font-weight: bold;
+        }
+      }
+
+      .error_input {
+        position: absolute;
+        padding: 0.2rem 0 0 0.2rem;
+
+        .error {
+          color: rgb(255, 0, 0);
+          font-size: 0.85rem;
+          font-weight: bold;
+        }
+      }
+    }
+
+    .labelMultiStep {
+      display: none;
+    }
+
+    .input_birthday {
+      color: vars.$colorH2Home;
+      font-weight: bold;
+    }
+    input[type="date"]::-webkit-calendar-picker-indicator {
+      filter: invert(100%);
+      margin-right: 2.5rem;
+      font-weight: bold;
+      font-size: 1.3rem;
+      cursor: pointer;
+    }
+  }
+
+  .form_register--button {
+    display: flex;
+    justify-content: center;
+
+    button {
+      width: 40%;
+      height: 3rem;
+      border: none;
+      border-radius: 1rem;
+    }
+
+    .button_next {
+      background-color: #40df3c;
+      color: white;
+      font-weight: bold;
+      font-size: 0.8rem;
+    }
+
+    .button_prev {
+      color: white;
+      font-weight: bold;
+      font-size: 0.8rem !important;
+      background: rgb(9, 33, 143) !important;
+      margin-right: 2rem;
+
+      &:hover {
+        background: none !important;
+        border: solid 3px rgb(9, 33, 143) !important;
+      }
+    }
+
+    .button_submit {
+      background-color: #40df3c;
+      color: white;
+      font-weight: bold;
+      font-size: 0.8rem;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+@use "src/styles/vars";
+@use "src/styles/mixins";
+
+.footer {
+    height: 4rem;
+    background-color: vars.$backgroundTransparent;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    padding-right: 3rem;
+}
