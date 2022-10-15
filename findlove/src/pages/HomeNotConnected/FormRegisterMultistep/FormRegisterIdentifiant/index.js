@@ -25,7 +25,6 @@ function FormRegisterIdentifiant({
     confirmPassword: false,
   };
   const [errors, setErrors] = useState(errorsObj);
-  const [success, setSuccess] = useState(false);
   const [successIcon, setSuccessIcon] = useState(checksObj);
 
   const validateFormIdentifiant = (evt) => {
@@ -40,7 +39,6 @@ function FormRegisterIdentifiant({
       errorObj.mail = "l'email n'est pas valide.";
     } else {
       checkObj.mail = true;
-      setSuccess(true);
     }
     //password validation
     if (password === "") {
@@ -49,7 +47,6 @@ function FormRegisterIdentifiant({
       errorObj.password = "Le mot de passe doit contenir minimum 6 caractères.";
     } else {
       checkObj.password = true;
-      setSuccess(true);
     }
     //password confirmation validation
     if (password !== confirmPassword) {
@@ -60,17 +57,8 @@ function FormRegisterIdentifiant({
         "Le champ confirmation du mot de passe est requise.";
     } else {
       checkObj.confirmPassword = true;
-      setSuccess(true);
     }
 
-    if (
-      errorObj.mail === "" &&
-      errorObj.password === "" &&
-      errorObj.confirmPassword === ""
-    ) {
-      setSuccess(true);
-      console.log("test sucess")
-    }
 
     if (
       errorObj.mail === "" &&
