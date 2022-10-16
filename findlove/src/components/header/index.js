@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 // Import components
 import Button from "../Button";
 // Import assets
-import Logo from "../../assets/img/logo/FindLove.png";
+import Logo from "../Logo";
 // Import css
 import "./header.scss";
 
@@ -12,9 +12,7 @@ function Header({ nameLink, nameButton, nameClassButton }) {
   
   return (
     <header className="header">
-      <div className="header_logo-box">
-        <img src={Logo} alt="logo du site" className="header_logo" />
-      </div>
+      <Logo />
       <div className="header_button-box">
         <NavLink to={`/${nameLink}`}>
           <Button name={nameButton} className={`header_button ${nameClassButton}`} />
