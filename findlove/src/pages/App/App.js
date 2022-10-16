@@ -1,8 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 
-// Import Components
-import Footer from "../../components/Footer";
 // Import containers
 import HomeNotConnected from "../../containers/Register";
 import Login from "../../containers/Login";
