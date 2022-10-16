@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 
 // Import containers
@@ -7,7 +7,11 @@ import Login from "../../containers/Login";
 // Import CSS
 import "./App.scss";
 
-function App() {
+function App({isLogged, refreshLogin}) {
+  useEffect(() => {
+    refreshLogin();
+  }, [refreshLogin]);
+  
   return (
     <div className="app">
       <Routes>
