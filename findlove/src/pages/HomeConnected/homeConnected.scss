@@ -1,0 +1,14 @@
+@use "src/styles/vars";
+@use "src/styles/mixins";
+
+
+.homeConnected {
+    min-height: 100vh;
+    background: vars.$background1;
+
+    .middle_headerConnected {
+        display: flex;
+        justify-content: space-around;
+        padding: 7rem 0 3rem 0;
+    }
+}

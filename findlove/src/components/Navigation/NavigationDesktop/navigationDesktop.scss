@@ -1,0 +1,27 @@
+@use "src/styles/vars";
+@use "src/styles/mixins";
+
+
+.nav_desktop {
+   
+    ul {
+        display: flex;
+
+        li {
+            display: flex;
+            flex-direction: column;
+            font-size: 1.8rem;
+            margin-right: 6rem;
+            font-weight: bold;
+
+            svg {
+                margin-bottom: 1.5rem;
+                font-size: 2.5rem;
+                color: vars.$background4;
+            }
+        }
+        li:last-child {
+            margin-right: 0;
+        }
+    }
+}

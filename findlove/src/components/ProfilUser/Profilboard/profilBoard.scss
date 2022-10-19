@@ -1,0 +1,66 @@
+@use "src/styles/vars";
+@use "src/styles/mixins";
+
+.profil_dashboard-wrapper {
+  border-radius: 2rem;
+  width: 22%;
+  min-height: 100%;
+  margin: 0 2rem 0 3rem;
+  padding-bottom: 3rem;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  background: vars.$colorLight;
+  box-shadow: 0 0 4px rgb(0 0 0 / 10%);
+  overflow: hidden;
+
+  .profil_dashboard-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    background: vars.$background5;
+    height: 8rem;
+    width: 100%;
+    position: relative;
+    margin-bottom: 15rem;
+
+    span {
+      position: absolute;
+      color: vars.$background4;
+      font-size: 2.3rem;
+      bottom: -64px;
+      right: 140px;
+    }
+
+    img {
+      border-radius: 50%;
+      border: solid 4px vars.$background1;
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+      height: 10rem;
+      width: 10rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+        font-weight: bold;
+        font-size: 2rem;
+        color: vars.$background5;
+    }
+  }
+
+  .profil_dashboard-infos {
+    font-size: 2rem;
+    font-weight: bold;
+    span {
+      color: vars.$background4;
+      padding-right: 1rem;
+    }
+
+    li {
+      margin-bottom: 6rem;
+    }
+  }
+}

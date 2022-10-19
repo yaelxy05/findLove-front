@@ -1,0 +1,20 @@
+@use "src/styles/vars";
+@use "src/styles/mixins";
+
+.header_connected {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 14rem;
+    background: vars.$background2;
+    color: vars.$colorH2Home;
+    
+    .header_logo-box {
+        
+        .header_logo {
+          height: 100px;
+          width: 100px;
+          border-radius: 0.8rem;
+        }
+      }
+}
