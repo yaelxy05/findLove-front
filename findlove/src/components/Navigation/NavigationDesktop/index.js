@@ -1,5 +1,8 @@
 import React from "react";
 
+// Import Components
+import Logo from "../../../components/Logo";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAddressBook, faUser, faMagnifyingGlass, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
@@ -9,6 +12,7 @@ import "./navigationDesktop.scss";
 function NavigationDesktop() {
   return (
     <nav className="nav_desktop">
+      <Logo />
       <ul>
         <li>
           <FontAwesomeIcon icon={faAddressBook} />

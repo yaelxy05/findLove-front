@@ -5,9 +5,14 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 14rem;
     background: vars.$background2;
     color: vars.$colorH2Home;
+    @include mixins.for-tablet-landscape-up {
+      height: 14rem;
+    }
+    @include mixins.for-phone-and-tablet-only {
+      height: 5rem;
+    }
     
     .header_logo-box {
         
