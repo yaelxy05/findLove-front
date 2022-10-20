@@ -11,7 +11,8 @@ const mapStateToProps = (state) => ({
   gender: state.register.gender,
   lastname: state.register.lastname,
   firstname: state.register.firstname,
-  birthdate: state.register.birthdate
+  birthdate: state.register.birthdate,
+  search: state.register.search
 });
 
 const mapDispatchToProps = (dispatch) => ({

@@ -9,6 +9,7 @@ const initialState = {
   gender: "",
   lastname: "",
   firstname: "",
+  search: "",
 };
 
 
@@ -30,6 +31,7 @@ function registerReducer(state = initialState, action) {
         firstname:
           action.name === "firstname" ? action.newValue : state.firstname,
         city: action.name === "city" ? action.newValue : state.city,
+        search: action.name === "search" ? action.newValue : state.search,
       };
     default:
       return state;

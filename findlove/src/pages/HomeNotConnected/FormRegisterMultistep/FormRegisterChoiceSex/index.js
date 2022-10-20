@@ -6,13 +6,10 @@ import ProgressBar from "../../../../components/ProgressBar";
 // Import CSS
 import "./formRegisterChoiceSex.scss";
 
-function FormRegister({ page, setPage, gender, changeFieldRegister }) {
-  const [genderSearch, setGenderSearch] = useState("");
+function FormRegister({ page, setPage, gender, search, changeFieldRegister }) {
+  
 
-  function manageChangeSearch(event) {
-    setGenderSearch(event.target.value);
-    console.log(event.target.value);
-  }
+
 
 
   return (
@@ -72,24 +69,28 @@ function FormRegister({ page, setPage, gender, changeFieldRegister }) {
           <div className="form_register-box-input-search">
             <Input
               type="radio"
-              groupName="search-group"
+              groupName="search"
               classNameInput="form_register-input"
               id="man-search"
-              value="man-search"
-              checked={genderSearch === "man-search"}
-              manageChange={manageChangeSearch}
+              value="H"
+              checked={search === "H"}
+              manageChange={(value, identifier) => {
+                changeFieldRegister(value, identifier);
+              }}
               nameLabel="un homme"
               classNameLabel="man-label"
               nameId="man-search"
             />
             <Input
               type="radio"
-              groupName="search-group"
+              groupName="search"
               classNameInput="form_register-input"
               id="woman-search"
-              value="woman-search"
-              checked={genderSearch === "woman-search"}
-              manageChange={manageChangeSearch}
+              value="W"
+              checked={search === "W"}
+              manageChange={(value, identifier) => {
+                changeFieldRegister(value, identifier);
+              }}
               nameLabel="une femme"
               classNameLabel="woman-label"
               nameId="woman-search"

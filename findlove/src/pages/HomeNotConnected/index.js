@@ -16,6 +16,7 @@ function homeNotConnected({
   password,
   confirmPassword,
   gender,
+  search,
   handleRegister,
 }) {
   return (
@@ -34,6 +35,7 @@ function homeNotConnected({
         password={password}
         confirmPassword={confirmPassword}
         gender={gender}
+        search={search}
         handleRegister={handleRegister}
       />
 

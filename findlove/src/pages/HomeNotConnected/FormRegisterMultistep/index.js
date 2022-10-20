@@ -16,6 +16,7 @@ function FormRegisterMultistep({
   password,
   confirmPassword,
   gender,
+  search,
   handleRegister,
 }) {
   const [page, setPage] = useState(0);
@@ -28,6 +29,7 @@ function FormRegisterMultistep({
           setPage={setPage}
           gender={gender}
           changeFieldRegister={changeFieldRegister}
+          search={search}
         />
       );
     } else if (page === 1) {
