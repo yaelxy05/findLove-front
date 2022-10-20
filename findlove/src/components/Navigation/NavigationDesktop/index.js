@@ -30,6 +30,7 @@ function NavigationDesktop() {
           <FontAwesomeIcon icon={faEnvelope} />
           <p>Mes messages</p>
         </li>
+      
       </ul>
     </nav>
   );

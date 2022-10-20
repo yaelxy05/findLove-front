@@ -26,6 +26,7 @@ function FormRegisterIdentifiant({
   };
   const [errors, setErrors] = useState(errorsObj);
   const [successIcon, setSuccessIcon] = useState(checksObj);
+  const [passwordVisible, setPasswordVisible] = useState(false);
 
   const validateFormIdentifiant = (evt) => {
     evt.preventDefault();
@@ -58,7 +59,6 @@ function FormRegisterIdentifiant({
     } else {
       checkObj.confirmPassword = true;
     }
-
 
     if (
       errorObj.mail === "" &&
@@ -109,7 +109,7 @@ function FormRegisterIdentifiant({
         </div>
         <div className="box_input">
           <Input
-            type="password"
+            type={passwordVisible ? "text" : "password"}
             groupName="password"
             classNameInput="input_password inputMultiStep"
             id="password"
@@ -123,6 +123,9 @@ function FormRegisterIdentifiant({
             }
             errors={errors.password}
             success={successIcon.password}
+            setPasswordVisible={setPasswordVisible}
+            passwordVisible={passwordVisible}
+            
           />
           {errors.password && (
             <div className="error_input">
@@ -146,6 +149,7 @@ function FormRegisterIdentifiant({
             }
             errors={errors.confirmPassword}
             success={successIcon.confirmPassword}
+   
           />
           {errors.confirmPassword && (
             <div className="error_input">

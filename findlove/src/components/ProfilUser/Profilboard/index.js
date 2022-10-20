@@ -4,8 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHeart,
   faThumbsUp,
-  faMessage,
   faHandSpock,
+  faArrowRightFromBracket,
 } from "@fortawesome/free-solid-svg-icons";
 
 // Import CSS
@@ -39,8 +39,14 @@ function ProfilBoard() {
             </span>
             Mes visites
           </li>
-        
+          <li>
+            <span>
+              <FontAwesomeIcon icon={faArrowRightFromBracket} />
+            </span>
+            Se déconnecter
+          </li>
         </ul>
+        
       </div>
     </section>
   );
