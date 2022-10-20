@@ -16,7 +16,6 @@ import {
 import "./naviagtionMobile.scss";
 
 function NavigationMobile({ openMenu, closeMenu, isOpen }) {
-  console.log(isOpen);
   return (
     <nav className="navigatioMobile">
       <div className="navigationMobile_header">

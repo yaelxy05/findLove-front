@@ -8,7 +8,7 @@
     background: vars.$background2;
     color: vars.$colorH2Home;
     @include mixins.for-tablet-landscape-up {
-      height: 14rem;
+      height: 10rem;
     }
     @include mixins.for-phone-and-tablet-only {
       height: 5rem;
@@ -17,8 +17,8 @@
     .header_logo-box {
         
         .header_logo {
-          height: 100px;
-          width: 100px;
+          height: 80px;
+          width: auto;
           border-radius: 0.8rem;
         }
       }
