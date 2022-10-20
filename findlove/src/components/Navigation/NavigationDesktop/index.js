@@ -4,7 +4,7 @@ import React from "react";
 import Logo from "../../../components/Logo";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAddressBook, faUser, faMagnifyingGlass, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faAddressBook, faUser, faMagnifyingGlass, faEnvelope, faHouse } from "@fortawesome/free-solid-svg-icons";
 
 // Import CSS
 import "./navigationDesktop.scss";
@@ -14,6 +14,10 @@ function NavigationDesktop() {
     <nav className="nav_desktop">
       <Logo />
       <ul>
+      <li>
+          <FontAwesomeIcon icon={faHouse} />
+          <p>Accueil</p>
+        </li>
         <li>
           <FontAwesomeIcon icon={faAddressBook} />
           <p>Mes contacts</p>
