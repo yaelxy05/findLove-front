@@ -18,7 +18,7 @@ const authMiddleware = (store) => (next) => (action) => {
         .then((response) => {
           localStorage.setItem("token", response.data.token);
           store.dispatch(saveUser(response.data.token));
-          //window.location = "/espace-utilisateur";
+          window.location = "/home";
           console.log(response);
         })
         .catch((error) => {
