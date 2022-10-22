@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink, Outlet } from "react-router-dom";
 
 // Import Components
 import Logo from "../../../components/Logo";
@@ -17,6 +18,7 @@ import "./naviagtionMobile.scss";
 
 function NavigationMobile({ openMenu, closeMenu, isOpen }) {
   return (
+    <>
     <nav className="navigatioMobile">
       <div className="navigationMobile_header">
         <Logo />
@@ -50,7 +52,9 @@ function NavigationMobile({ openMenu, closeMenu, isOpen }) {
           </li>
         </ul>
       </div>
-    </nav>
+      </nav>
+    </>
+    
   );
 }
 

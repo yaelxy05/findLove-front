@@ -1,0 +1,30 @@
+import React from 'react'
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+    faXmark,
+    faPaperPlane
+} from "@fortawesome/free-solid-svg-icons";
+
+// Import CSS
+import "./chat.scss"
+
+function Chat() {
+  return (
+      <div className="chat">
+          <header className="chat_header">
+              <h3>name</h3>
+              <FontAwesomeIcon icon={faXmark}/>
+          </header>
+          <div className="chat_middle">
+              
+          </div>
+          <footer className='chat_footer' aria-label='Ecrire un message'>
+              <input type="text" />
+              <FontAwesomeIcon icon={faPaperPlane}/>
+          </footer>
+    </div>
+  )
+}
+
+export default Chat
