@@ -9,12 +9,13 @@ import {
 // Import CSS
 import "./chat.scss"
 
-function Chat() {
+function Chat({ isOpenMessage, toggleMessage }) {
+    console.log(isOpenMessage)
   return (
-      <div className="chat">
+      <div className={isOpenMessage ? "chat" : "chat_inactive"}>
           <header className="chat_header">
               <h3>name</h3>
-              <FontAwesomeIcon icon={faXmark}/>
+              <FontAwesomeIcon icon={faXmark} onClick={toggleMessage} />
           </header>
           <div className="chat_middle">
               

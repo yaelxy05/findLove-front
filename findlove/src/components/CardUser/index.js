@@ -5,7 +5,6 @@ import {
   faThumbsUp,
   faMessage,
 } from "@fortawesome/free-solid-svg-icons";
-
 function CardUser({ urlPicture, altPicture, name, city, age }) {
   return (
     <div className="profilCatalog_card">

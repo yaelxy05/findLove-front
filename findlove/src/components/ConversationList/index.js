@@ -5,13 +5,16 @@ import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 // Import Components
 import Message from "./message";
+// Import CSS
+import "./conversationList.scss";
 
-function ConversationList({}) {
+function ConversationList({ isOpenChat, toggleChat }) {
+  
   return (
-    <aside className="messenger">
+    <aside  className={isOpenChat ? "messenger" : "messenger_inactive"}>
       <header className="messenger_header">
         <h2>Messagerie</h2>
-        <FontAwesomeIcon icon={faChevronDown} />
+        <FontAwesomeIcon icon={faChevronDown} onClick={toggleChat} />
       </header>
       <div className="messenger_content--box">
         <Message
@@ -48,7 +51,7 @@ function ConversationList({}) {
         Mr HUE Yael
         07-81-28-51-47"
         />
-          <Message
+        <Message
           name="Jean"
           date="18 octobre"
           message="Je vous remercie 

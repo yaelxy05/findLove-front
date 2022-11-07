@@ -15,7 +15,7 @@ function ProfilBoard() {
   return (
     <section className="profil_dashboard-wrapper">
       <header className="profil_dashboard-header">
-        <img src="https://xsgames.co/randomusers/avatar.php?g=male" />
+        <img src="https://xsgames.co/randomusers/avatar.php?g=male" alt="avatar de l'utilisateur"/>
 
         <p>Yael</p>
       </header>

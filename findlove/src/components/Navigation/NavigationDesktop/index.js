@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 // Import Components
 import Logo from "../../../components/Logo";
@@ -50,8 +50,15 @@ function NavigationDesktop() {
             <p>Mon profil</p>
           </li>
           <li>
-            <FontAwesomeIcon icon={faMagnifyingGlass} />
-            <p>Recherche</p>
+            <NavLink
+              to="/espace-utilisateur/recherche"
+              className={({ isActive }) =>
+                isActive ? activeClassName : undefined
+              }
+            >
+              <FontAwesomeIcon icon={faMagnifyingGlass} />
+              <p>Recherche</p>
+            </NavLink>
           </li>
           <li>
             <FontAwesomeIcon icon={faEnvelope} />
@@ -59,7 +66,6 @@ function NavigationDesktop() {
           </li>
         </ul>
       </nav>
-  
     </>
   );
 }
