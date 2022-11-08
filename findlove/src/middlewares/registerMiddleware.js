@@ -8,7 +8,7 @@ const registerMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case NEW_USER_CREATION: {
       const {
-        mail,
+        email,
         password,
         city,
         birthdate,
@@ -19,7 +19,7 @@ const registerMiddleware = (store) => (next) => (action) => {
       } = store.getState().register;
 
       const newUser = new FormData();
-      newUser.set("mail", mail);
+      newUser.set("email", email);
       newUser.set("password", password);
       newUser.set("city", city);
       newUser.set("birthdate", birthdate);

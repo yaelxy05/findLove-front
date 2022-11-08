@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
@@ -8,7 +8,11 @@ import Message from "./message";
 // Import CSS
 import "./conversationList.scss";
 
-function ConversationList({ isOpenChat, toggleChat }) {
+function ConversationList({ isOpenChat, toggleChat, fetchConversation, conversationList }) {
+  useEffect(() => {
+    fetchConversation();
+  }, []);
+  
   
   return (
     <aside  className={isOpenChat ? "messenger" : "messenger_inactive"}>

@@ -1,6 +1,6 @@
 import React from "react";
 
-import ConversationList from "../../../containers/ToggleChat";
+import ConversationList from "../../../containers/Conversation";
 import Chat from "../../../containers/ToggleMessage";
 
 import "./searchProfil.scss";

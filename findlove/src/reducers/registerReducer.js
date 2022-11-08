@@ -1,7 +1,7 @@
 import { CHANGE_REGISTER_FIELD } from "../actions/register";
 
 const initialState = {
-  mail: "",
+  email: "",
   password: "",
   confirmPassword: "",
   city: "",
@@ -18,7 +18,7 @@ function registerReducer(state = initialState, action) {
     case CHANGE_REGISTER_FIELD:
       return {
         ...state,
-        mail: action.name === "mail" ? action.newValue : state.mail,
+        email: action.name === "email" ? action.newValue : state.email,
         password: action.name === "password" ? action.newValue : state.password,
         confirmPassword:
           action.name === "confirmPassword"

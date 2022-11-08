@@ -1,8 +1,8 @@
 import React from "react";
 
-import ConversationList from "../../../containers/ToggleChat";
+import ConversationList from "../../../containers/Conversation";
 import Profilboard from "../../../components/ProfilUser/Profilboard";
-import ProfilCatalog from "../../../components/ProfilUser/ProfilCatalog";
+import ProfilCatalog from "../../../containers/UserList";
 import Chat from "../../../containers/ToggleMessage";
 
 import "./home.scss";

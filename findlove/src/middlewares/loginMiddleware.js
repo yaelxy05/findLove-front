@@ -12,6 +12,10 @@ const authMiddleware = (store) => (next) => (action) => {
 
       axios
         .post(`${API_URL}/login`, {
+          headers: {
+          Accept: "application/json, text/plain, */*",
+          "Content-Type": "application/json",
+        },
           username: username,
           password: password,
         })

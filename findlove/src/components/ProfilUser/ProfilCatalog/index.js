@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 // Import CSS
 import "./profilCatalog.scss";
 import CardUser from "../../CardUser";
 
-function ProfilCatalog() {
+function ProfilCatalog({fetchUserList}) {
+  useEffect(() => {
+    fetchUserList();
+  }, []);
   return (
     <section className="profilCatalog">
       <div className="profilCatalog-title">

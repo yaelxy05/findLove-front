@@ -4,10 +4,10 @@ import { combineReducers } from 'redux';
 import RegisterReducer from "./registerReducer";
 import LoginReducer from "./loginReducer";
 import NavigationReducer from "./navigationReducer";
-import ConversationReducer from './conversationReducer';
-import MessageReducer from './messageReducer';
-import ToggleChatReducer from './toggleChatReducer';
+import ConversationReducer from './conversationListReducer';
+//import MessageReducer from './messageReducer';
 import ToggleMessageReducer from './toggleMessageReducer';
+import UserListReducer from './userListReducer';
 
 
 const rootReducer = combineReducers({
@@ -16,7 +16,7 @@ const rootReducer = combineReducers({
     navigation: NavigationReducer,
     conversation: ConversationReducer,
     toggleMessage: ToggleMessageReducer,
-    toggleChat: ToggleChatReducer
+    userList: UserListReducer,
 });
 
 export default rootReducer;

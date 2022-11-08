@@ -2,7 +2,7 @@ import React from "react";
 
 // Import components
 import CardContact from "../../../components/CardContact";
-import ConversationList from "../../../containers/ToggleChat";
+import ConversationList from "../../../containers/Conversation";
 import Chat from "../../../containers/ToggleMessage";
 
 import "./contact.scss";
