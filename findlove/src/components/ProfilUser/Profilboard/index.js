@@ -11,11 +11,14 @@ import {
 // Import CSS
 import "./profilBoard.scss";
 
-function ProfilBoard() {
+function ProfilBoard({ handleLogout }) {
   return (
     <section className="profil_dashboard-wrapper">
       <header className="profil_dashboard-header">
-        <img src="https://xsgames.co/randomusers/avatar.php?g=male" alt="avatar de l'utilisateur"/>
+        <img
+          src="https://xsgames.co/randomusers/avatar.php?g=male"
+          alt="avatar de l'utilisateur"
+        />
 
         <p>Yael</p>
       </header>
@@ -39,14 +42,13 @@ function ProfilBoard() {
             </span>
             Mes visites
           </li>
-          <li>
+          <li onClick={() => handleLogout()} className="icon_logout">
             <span>
               <FontAwesomeIcon icon={faArrowRightFromBracket} />
             </span>
             Se déconnecter
           </li>
         </ul>
-        
       </div>
     </section>
   );

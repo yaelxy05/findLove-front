@@ -1,7 +1,7 @@
 import React from "react";
 
 import ConversationList from "../../../containers/Conversation";
-import Profilboard from "../../../components/ProfilUser/Profilboard";
+import Profilboard from "../../../containers/ProfilBoard";
 import ProfilCatalog from "../../../containers/UserList";
 import Chat from "../../../containers/ToggleMessage";
 

@@ -5,9 +5,13 @@ import {
   faThumbsUp,
   faMessage,
 } from "@fortawesome/free-solid-svg-icons";
-function CardUser({ urlPicture, altPicture, name, city, age }) {
+function CardUser({ urlPicture, altPicture, name, city, age, newConversation, id, key }) {
+  const newConversationId = (id) => {
+    newConversation(id);
+  }
+  
   return (
-    <div className="profilCatalog_card">
+    <div className="profilCatalog_card" >
       <img src={urlPicture} alt={altPicture} />
       <div className="profilCatalog_card--midlle">
         <p className="profilCatalog_card--name">{name}</p>
@@ -25,7 +29,7 @@ function CardUser({ urlPicture, altPicture, name, city, age }) {
           <FontAwesomeIcon icon={faHeart} />
         </span>
         <span>
-          <FontAwesomeIcon icon={faMessage} />
+          <FontAwesomeIcon icon={faMessage} onClick={() => newConversationId(id)}  />
         </span>
       </div>
     </div>

@@ -15,7 +15,7 @@ const conversationListMiddleware = (store) => (next) => (action) => {
           },
         })
         .then((response) => {
-          console.log(response);
+          
           store.dispatch(saveUserList(response.data));
         })
         .catch((error) => {

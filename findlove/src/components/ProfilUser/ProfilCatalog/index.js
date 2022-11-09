@@ -4,10 +4,12 @@ import React, { useEffect } from "react";
 import "./profilCatalog.scss";
 import CardUser from "../../CardUser";
 
-function ProfilCatalog({fetchUserList}) {
+function ProfilCatalog({ fetchUserList, userList, newConversationCreation }) {
   useEffect(() => {
     fetchUserList();
-  }, []);
+  }, [fetchUserList]);
+  console.log(userList.users);
+
   return (
     <section className="profilCatalog">
       <div className="profilCatalog-title">
@@ -15,61 +17,20 @@ function ProfilCatalog({fetchUserList}) {
       </div>
 
       <div className="profilCatalog_list">
-        <CardUser
-          urlPicture="https://xsgames.co/randomusers/avatar.php?g=female"
-          altPicture="Photo de profil"
-          name="Elodie"
-          city="Paris"
-          age="25"
-        />
-        <CardUser
-          urlPicture="https://xsgames.co/randomusers/avatar.php?g=female"
-          altPicture="Photo de profil"
-          name="Marina"
-          city="Marseille"
-          age="25"
-        />
-        <CardUser
-          urlPicture="https://xsgames.co/randomusers/avatar.php?g=female"
-          altPicture="Photo de profil"
-          name="Meline"
-          city="Marseille"
-          age="25"
-        />
-        <CardUser
-          urlPicture="https://xsgames.co/randomusers/avatar.php?g=female"
-          altPicture="Photo de profil"
-          name="Oriane"
-          city="Nice"
-          age="25"
-        />
-        <CardUser
-          urlPicture="https://xsgames.co/randomusers/avatar.php?g=female"
-          altPicture="Photo de profil"
-          name="Elodie"
-          city="Paris"
-          age="25"
-        />
-        <CardUser
-          urlPicture="https://xsgames.co/randomusers/avatar.php?g=female"
-          altPicture="Photo de profil"
-          name="Marina"
-          city="Marseille"
-        />
-        <CardUser
-          urlPicture="https://xsgames.co/randomusers/avatar.php?g=female"
-          altPicture="Photo de profil"
-          name="Meline"
-          city="Marseille"
-          age="25"
-        />
-        <CardUser
-          urlPicture="https://xsgames.co/randomusers/avatar.php?g=female"
-          altPicture="Photo de profil"
-          name="Oriane"
-          city="Nice"
-          age="25"
-        />
+        {userList.users &&
+          userList.users.map((list, index) => (
+            <React.Fragment key={index}>
+              <CardUser
+                urlPicture="https://xsgames.co/randomusers/avatar.php?g=female"
+                altPicture="Photo de profil"
+                name={list.firstname}
+                city={list.city}
+                age="25"
+                newConversation={(id) => newConversationCreation(id)}
+                id={list.id}
+              />
+            </React.Fragment>
+          ))}
       </div>
     </section>
   );

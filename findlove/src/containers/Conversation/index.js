@@ -5,6 +5,8 @@ import {
   openChat,
   closeChat,
   toggleChat,
+  newConversationCreation,
+  changeConversationField
 } from "../../actions/conversation";
 import {
   fetchUserList,
@@ -14,7 +16,7 @@ import Conversation from "../../components/ConversationList";
 
 const mapStateToProps = (state) => ({
   conversationList: state.conversation.conversationList,
-  isOpenChat: state.conversation.isOpenChat,
+  isOpenChat: state.conversationList.isOpenChat,
   userList: state.userList.userList,
 });
 
@@ -33,6 +35,12 @@ const mapDispatchToProps = (dispatch) => ({
   },
   fetchUserList: () => {
     dispatch(fetchUserList());
+  },
+  newConversationCreation: (userId) => {
+    dispatch(newConversationCreation(userId));
+  },
+  changeConversationField: (value, fieldName) => {
+    dispatch(changeConversationField(value, fieldName));
   },
 });
 

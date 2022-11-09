@@ -11,7 +11,7 @@ import "./conversationList.scss";
 function ConversationList({ isOpenChat, toggleChat, fetchConversation, conversationList }) {
   useEffect(() => {
     fetchConversation();
-  }, []);
+  }, [fetchConversation]);
   
   
   return (

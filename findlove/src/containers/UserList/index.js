@@ -3,6 +3,9 @@ import { connect } from "react-redux";
 import {
     fetchUserList,
 } from "../../actions/userList";
+import {
+  newConversationCreation,
+} from "../../actions/conversation";
 
 import UserList from "../../components/ProfilUser/ProfilCatalog";
 
@@ -13,6 +16,9 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   fetchUserList: () => {
     dispatch(fetchUserList());
+  },
+  newConversationCreation: (userId) => {
+    dispatch(newConversationCreation(userId));
   },
 });
 

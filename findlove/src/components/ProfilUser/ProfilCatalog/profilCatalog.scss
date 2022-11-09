@@ -80,6 +80,10 @@
         span {
           font-size: 1.9rem;
           color: vars.$background4;
+          
+          svg {
+            cursor: pointer;
+          }
         }
       }
     }

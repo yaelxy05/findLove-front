@@ -10,7 +10,7 @@ import {
 import "./chat.scss"
 
 function Chat({ isOpenMessage, toggleMessage }) {
-    console.log(isOpenMessage)
+    
   return (
       <div className={isOpenMessage ? "chat" : "chat_inactive"}>
           <header className="chat_header">

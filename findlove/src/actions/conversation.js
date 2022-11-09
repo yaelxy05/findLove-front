@@ -25,8 +25,9 @@ export const changeConversationField = (newValue, name) => ({
     name,
   });
 
-export const newConversationCreation = () => ({
-    type: NEW_CONVERSATION_CREATION,
+export const newConversationCreation = (userId) => ({
+  type: NEW_CONVERSATION_CREATION,
+  userId: userId,
   });
 
   // ====================================
