@@ -1,0 +1,138 @@
+@use "src/styles/vars";
+@use "src/styles/mixins";
+.chat_inactive {
+  position: fixed;
+  bottom: -277px;
+  right: 300px;
+  height: 20rem;
+  width: 16rem;
+  background: vars.$colorLight;
+  box-shadow: 0 0 4px rgb(0 0 0 / 10%);
+  border-radius: 0.5rem 0.5rem 0 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all ease-in-out 0.8s;
+
+  .chat_header {
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: vars.$background3;
+
+    h3 {
+      color: vars.$colorLight;
+      font-weight: bold;
+      padding-right: 2.2rem;
+    }
+
+    svg {
+      color: vars.$colorLight;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+  }
+
+  .chat_middle {
+    height: 100%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .chat_footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 0.5rem;
+    white-space: pre-wrap;
+    word-break: break-word;
+    user-select: text;
+
+    input {
+      width: 80%;
+      height: 100%;
+      border-radius: 0.5rem;
+      border: none;
+      background-color: #f3f2ef;
+
+    }
+
+    svg {
+      font-size: 1.5rem;
+      padding-left: 0.5rem;
+      cursor: pointer;
+    }
+  }
+}
+.chat {
+  position: fixed;
+  bottom: 0;
+  right: 300px;
+  height: 20rem;
+  width: 16rem;
+  background: vars.$colorLight;
+  box-shadow: 0 0 4px rgb(0 0 0 / 10%);
+  border-radius: 0.5rem 0.5rem 0 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all ease-in-out 0.8s;
+  
+  .chat_header {
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: vars.$background3;
+
+    h3 {
+      color: vars.$colorLight;
+      font-weight: bold;
+      padding-right: 2.2rem;
+    }
+
+    svg {
+      color: vars.$colorLight;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+  }
+
+  .chat_middle {
+    height: 100%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .chat_footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 0.5rem;
+    white-space: pre-wrap;
+    word-break: break-word;
+    user-select: text;
+
+    input {
+      width: 80%;
+      height: 100%;
+      border-radius: 0.5rem;
+      border: none;
+      background-color: #f3f2ef;
+
+    }
+
+    svg {
+      font-size: 1.5rem;
+      padding-left: 0.5rem;
+      cursor: pointer;
+    }
+  }
+}

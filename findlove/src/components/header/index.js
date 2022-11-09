@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 
 // Import components
 import Button from "../Button";
-// Import assets
 import Logo from "../Logo";
 // Import css
 import "./header.scss";

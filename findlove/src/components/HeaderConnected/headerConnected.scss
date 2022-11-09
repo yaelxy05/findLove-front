@@ -1,0 +1,25 @@
+@use "src/styles/vars";
+@use "src/styles/mixins";
+
+.header_connected {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: vars.$background2;
+    color: vars.$colorH2Home;
+    @include mixins.for-tablet-landscape-up {
+      height: 10rem;
+    }
+    @include mixins.for-phone-and-tablet-only {
+      height: 5rem;
+    }
+    
+    .header_logo-box {
+        
+        .header_logo {
+          height: 80px;
+          width: auto;
+          border-radius: 0.8rem;
+        }
+      }
+}

@@ -8,24 +8,25 @@ import "../formRegister.scss";
 function FormRegisterIdentifiant({
   page,
   setPage,
-  mail,
+  email,
   password,
   confirmPassword,
   changeFieldRegister,
   handleRegister,
 }) {
   let errorsObj = {
-    mail: "",
+    email: "",
     password: "",
     confirmPassword: "",
   };
   let checksObj = {
-    mail: false,
+    email: false,
     password: false,
     confirmPassword: false,
   };
   const [errors, setErrors] = useState(errorsObj);
   const [successIcon, setSuccessIcon] = useState(checksObj);
+  const [passwordVisible, setPasswordVisible] = useState(false);
 
   const validateFormIdentifiant = (evt) => {
     evt.preventDefault();
@@ -33,12 +34,12 @@ function FormRegisterIdentifiant({
     const errorObj = { ...errorsObj };
     const checkObj = { ...checksObj };
     //mail validation
-    if (mail === "") {
-      errorObj.mail = "Un email est requis.";
-    } else if (!/\S+@\S+\.\S+/.test(mail)) {
-      errorObj.mail = "l'email n'est pas valide.";
-    } else {
-      checkObj.mail = true;
+    if (email === "") {
+      errorObj.email = "Un email est requis.";
+    } /*else if (!/\S+@\S+\.\S+/.test(email)) {
+      errorObj.email = "l'email n'est pas valide.";
+    } */ else {
+      checkObj.email = true;
     }
     //password validation
     if (password === "") {
@@ -59,9 +60,8 @@ function FormRegisterIdentifiant({
       checkObj.confirmPassword = true;
     }
 
-
     if (
-      errorObj.mail === "" &&
+      errorObj.email === "" &&
       errorObj.password === "" &&
       errorObj.confirmPassword === ""
     ) {
@@ -86,11 +86,11 @@ function FormRegisterIdentifiant({
       <div className="form_register--inputbox">
         <div className="box_input">
           <Input
-            type="mail"
-            groupName="mail"
+            type="email"
+            groupName="email"
             classNameInput="input_email inputMultiStep"
             id="email"
-            value={mail}
+            value={email}
             nameLabel="Email"
             classNameLabel="email-label labelMultiStep"
             nameId="email-id"
@@ -98,18 +98,18 @@ function FormRegisterIdentifiant({
             manageChange={(value, identifier) =>
               changeFieldRegister(value, identifier)
             }
-            errors={errors.mail}
-            success={successIcon.mail}
+            errors={errors.email}
+            success={successIcon.email}
           />
-          {errors.mail && (
+          {errors.email && (
             <div className="error_input">
-              <p className="error">{errors.mail}</p>
+              <p className="error">{errors.email}</p>
             </div>
           )}
         </div>
         <div className="box_input">
           <Input
-            type="password"
+            type={passwordVisible ? "text" : "password"}
             groupName="password"
             classNameInput="input_password inputMultiStep"
             id="password"
@@ -123,6 +123,9 @@ function FormRegisterIdentifiant({
             }
             errors={errors.password}
             success={successIcon.password}
+            setPasswordVisible={setPasswordVisible}
+            passwordVisible={passwordVisible}
+            
           />
           {errors.password && (
             <div className="error_input">
@@ -146,6 +149,7 @@ function FormRegisterIdentifiant({
             }
             errors={errors.confirmPassword}
             success={successIcon.confirmPassword}
+   
           />
           {errors.confirmPassword && (
             <div className="error_input">

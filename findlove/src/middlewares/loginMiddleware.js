@@ -12,13 +12,17 @@ const authMiddleware = (store) => (next) => (action) => {
 
       axios
         .post(`${API_URL}/login`, {
+          headers: {
+          Accept: "application/json, text/plain, */*",
+          "Content-Type": "application/json",
+        },
           username: username,
           password: password,
         })
         .then((response) => {
           localStorage.setItem("token", response.data.token);
           store.dispatch(saveUser(response.data.token));
-          //window.location = "/espace-utilisateur";
+          window.location = "/espace-utilisateur/home";
           console.log(response);
         })
         .catch((error) => {

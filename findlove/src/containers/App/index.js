@@ -11,7 +11,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    //Function for stay connected after refresh navigator
+    // Function for stay connected after refresh navigator
     refreshLogin: () => {
         dispatch(refreshLogin());
       },

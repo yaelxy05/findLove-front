@@ -1,6 +1,11 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTriangleExclamation, faCheck } from "@fortawesome/free-solid-svg-icons";
+import {
+  faTriangleExclamation,
+  faCheck,
+  faEye,
+  faEyeSlash,
+} from "@fortawesome/free-solid-svg-icons";
 
 function Input({
   type,
@@ -17,7 +22,9 @@ function Input({
   required,
   onBlur,
   errors,
-  success
+  success,
+  setPasswordVisible,
+  passwordVisible,
 }) {
   const handleChange = (evt) => {
     manageChange(evt.target.value, groupName);
@@ -32,8 +39,24 @@ function Input({
       )}
       {success && (
         <span className="icon_success--input">
-        <FontAwesomeIcon icon={faCheck} />
-      </span>
+          <FontAwesomeIcon icon={faCheck} />
+        </span>
+      )}
+      {!passwordVisible && groupName === "password" && (
+        <span className="icon_password--input">
+          <FontAwesomeIcon
+            icon={faEye}
+            onClick={() => setPasswordVisible(true)}
+          />
+        </span>
+      )}
+      {passwordVisible && groupName === "password" && (
+        <span className="icon_password--input">
+          <FontAwesomeIcon
+            icon={faEyeSlash}
+            onClick={() => setPasswordVisible(false)}
+          />
+        </span>
       )}
 
       <input

@@ -1,4 +1,5 @@
 // == Color
+//=========
 $backgroundTransparent: #11090dc0;
 
 // == H2 Home
@@ -9,3 +10,19 @@ $colorButton1: #40df3c;
 $colorButton2: rgb(9, 33, 143);
 $colorButtonRadio1: #265cdd;
 $colorButtonRadio2: #f73489;
+
+$colorLight: rgb(255, 255, 255);
+
+
+$background1: #EAEFF2;
+$background2: #533483;
+$background3: #0F3460;
+$background3Transparent: #0f3360ec;
+$background4: #E94560;
+$background5: #16213E;
+
+// == Fonts
+@import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300&display=swap');
+$police1: 'Sansita Swashed', cursive;
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+$police2: 'Merriweather', serif;

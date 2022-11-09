@@ -1,0 +1,91 @@
+@use "src/styles/vars";
+@use "src/styles/mixins";
+
+.profilCatalog {
+  width: 75%;
+  min-height: 100%;
+  border-radius: 2rem;
+  padding-bottom: 3rem;
+  margin-right: 1rem;
+  background: vars.$colorLight;
+  box-shadow: 0 0 4px rgb(0 0 0 / 10%);
+
+  .profilCatalog-title {
+    display: flex;
+    justify-content: center;
+    margin: 4rem 0;
+
+    h2 {
+      font-size: 3rem;
+      color: vars.$background5;
+      font-family: vars.$police1;
+    }
+  }
+
+  .profilCatalog_list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .profilCatalog_card {
+      display: flex;
+      flex-direction: column;
+      border: solid rgba(180, 179, 179, 0.584) 1px;
+      box-shadow: 0 0 6px rgb(0 0 0 / 10%);
+      border-radius: 1rem;
+      overflow: hidden;
+      height: 27rem;
+      width: 15rem;
+      margin: 2rem;
+      position: relative;
+
+      .profilCatalog_card--midlle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        p {
+          text-align: center;
+          color: vars.$background5;
+          font-weight: bold;
+          font-size: 1.3rem;
+          margin: 1rem 0;
+        }
+
+        .profilCatalog_card--name {
+          color: vars.$background4;
+        }
+
+        span {
+          display: flex;
+
+          p {
+            padding-right: 1rem;
+          }
+        }
+      }
+
+      .profilCatalog_card--footer {
+        background-color: vars.$background3;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        height: 4rem;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        span {
+          font-size: 1.9rem;
+          color: vars.$background4;
+          
+          svg {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

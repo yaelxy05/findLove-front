@@ -1,16 +1,30 @@
-import React from 'react'
+import React from "react";
+import { Outlet } from "react-router-dom";
 
 // Import Components
-import NavigationDesktop from '../Navigation/NavigationDesktop';
+import NavigationDesktop from "../Navigation/NavigationDesktop";
+import NavigationMobile from "../Navigation/NavigationMobile";
 
-function HeaderConnected() {
+// Import CSS
+import "./headerConnected.scss";
+
+function HeaderConnected({ openMenu, closeMenu, isOpen }) {
   return (
-      <>
-          {/* Navigation desktop */}
-            <NavigationDesktop />
-          {/* Navigation mobile */}
-      </>
-  )
+    <>
+      <div className="header_connected">
+        {/* Navigation desktop */}
+        <NavigationDesktop />
+        {/* Navigation mobile */}
+        <NavigationMobile
+          openMenu={openMenu}
+          closeMenu={closeMenu}
+          isOpen={isOpen}
+        />
+        
+      </div>
+      <Outlet />
+    </>
+  );
 }
 
-export default HeaderConnected
+export default HeaderConnected;

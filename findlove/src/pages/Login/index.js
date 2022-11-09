@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+
 // Import Components
 import Input from "../../components/Input";
 import Footer from "../../components/Footer";
@@ -17,6 +18,8 @@ function Login({
     evt.preventDefault();
     handleLogin();
   };
+
+  const [passwordVisible, setPasswordVisible] = useState(false);
 
   return (
     <div className="login_wrapper">
@@ -46,7 +49,7 @@ function Login({
           </div>
           <div className="box_input">
             <Input
-              type="password"
+              type={passwordVisible ? "text" : "password"}
               value={password}
               groupName="password"
               classNameInput="input_password inputLogin"
@@ -58,6 +61,8 @@ function Login({
               manageChange={(value, identifier) =>
                 changeLoginField(value, identifier)
               }
+              setPasswordVisible={setPasswordVisible}
+              passwordVisible={passwordVisible}
             />
           </div>
           <div className="form_login--button">

@@ -81,6 +81,15 @@
           right: 20px;
         }
 
+        .icon_password--input {
+          color: vars.$colorButtonRadio1;
+          position: absolute;
+          top:15px;
+          right: 50px;
+          cursor:pointer;
+          font-size: 1.2rem;
+        }
+
         .inputLogin {
           height: 3rem;
           width: 100%;
